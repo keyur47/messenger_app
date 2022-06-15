@@ -1,15 +1,15 @@
-class demo {
+class GetDemo {
   bool? ok;
   List<Result>? result;
 
-  demo({this.ok, this.result});
+  GetDemo({this.ok, this.result});
 
-  demo.fromJson(Map<String, dynamic> json) {
+  GetDemo.fromJson(Map<String, dynamic> json) {
     ok = json['ok'];
     if (json['result'] != null) {
       result = <Result>[];
       json['result'].forEach((v) {
-        result!.add(Result.fromJson(v));
+        result!.add(new Result.fromJson(v));
       });
     }
   }
@@ -33,7 +33,7 @@ class Result {
   Result.fromJson(Map<String, dynamic> json) {
     updateId = json['update_id'];
     message =
-    json['message'] != null ? Message.fromJson(json['message']) : null;
+    json['message'] != null ? new Message.fromJson(json['message']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -52,15 +52,8 @@ class Message {
   Chat? chat;
   int? date;
   String? text;
-  List<Entities>? entities;
 
-  Message(
-      {this.messageId,
-        this.from,
-        this.chat,
-        this.date,
-        this.text,
-        this.entities});
+  Message({this.messageId, this.from, this.chat, this.date, this.text});
 
   Message.fromJson(Map<String, dynamic> json) {
     messageId = json['message_id'];
@@ -68,12 +61,6 @@ class Message {
     chat = json['chat'] != null ? new Chat.fromJson(json['chat']) : null;
     date = json['date'];
     text = json['text'];
-    if (json['entities'] != null) {
-      entities = <Entities>[];
-      json['entities'].forEach((v) {
-        entities!.add(new Entities.fromJson(v));
-      });
-    }
   }
 
   Map<String, dynamic> toJson() {
@@ -87,9 +74,6 @@ class Message {
     }
     data['date'] = this.date;
     data['text'] = this.text;
-    if (this.entities != null) {
-      data['entities'] = this.entities!.map((v) => v.toJson()).toList();
-    }
     return data;
   }
 }
@@ -142,28 +126,6 @@ class Chat {
     data['id'] = this.id;
     data['first_name'] = this.firstName;
     data['username'] = this.username;
-    data['type'] = this.type;
-    return data;
-  }
-}
-
-class Entities {
-  int? offset;
-  int? length;
-  String? type;
-
-  Entities({this.offset, this.length, this.type});
-
-  Entities.fromJson(Map<String, dynamic> json) {
-    offset = json['offset'];
-    length = json['length'];
-    type = json['type'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['offset'] = this.offset;
-    data['length'] = this.length;
     data['type'] = this.type;
     return data;
   }

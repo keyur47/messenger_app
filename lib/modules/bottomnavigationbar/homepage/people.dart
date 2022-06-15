@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:messenger_app/helpr/api_res_controller.dart';
+import 'package:messenger_app/helpr/loading_indicator.dart';
 import 'package:messenger_app/utils/app_color.dart';
 
 class People extends StatelessWidget {
@@ -13,7 +14,7 @@ class People extends StatelessWidget {
       backgroundColor: AppColors.backgroundColor,
       body: Obx(
             () => _apiResController.isLoader.value
-            ? const Center(child: CircularProgressIndicator())
+            ? const Center(child: Loading())
             : Padding(
           padding: const EdgeInsets.only(left: 10,right: 10,top: 5,bottom: 5),
           child: ListView.builder(

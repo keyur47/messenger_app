@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       setState(() {
                         _currentIndex = 2;
-                        currentScreen = const Profile();
+                        currentScreen =  Profile();
                       });
                     },
                     child: const Icon(Icons.chat_bubble))),
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   setState(
                     () {
                       _currentIndex = 3;
-                      currentScreen = const Stories();
+                      currentScreen =  SimpleEcommerce();
                     },
                   );
                 },
@@ -101,6 +101,64 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //
 // import 'package:flutter/material.dart';

@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:messenger_app/utils/appconfig.dart';
 
 class NetworkAPICall {
   static final NetworkAPICall _networkAPICall = NetworkAPICall._internal();
@@ -13,7 +14,8 @@ class NetworkAPICall {
 
   NetworkAPICall._internal();
 
-  static const String BASE_URL = 'https://api.telegram.org/';
+  // static const String BASE_URL = 'https://api.telegram.org/';
+  static String BASE_URL = AppConfig.BASE_URL;
 
   Future<dynamic> post(String url, {dynamic body, Map<String, String>? header}) async {
     final client = http.Client();

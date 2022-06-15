@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:messenger_app/utils/my_behavior.dart';
 import 'package:sizer/sizer.dart';
 
 import 'helpr/api_res_controller.dart';
@@ -17,7 +18,13 @@ class MyApp extends StatelessWidget {
     return Sizer(builder: (context, orientation, deviceType) {
       return GetMaterialApp(
         initialBinding: AppBidding(),
-        home: MyHomePage(),
+        builder: (context, child) {
+          return ScrollConfiguration(
+            behavior: MyBehavior(),
+            child: child!,
+          );
+        },
+        home: const MyHomePage(),
       );
     });
   }
