@@ -74,6 +74,7 @@ class _ProfileState extends State<Profile> {
                   Column(
                     children: [
                       TextFormField(
+                        obscuringCharacter: "\uDD91",
                         controller: _apiResController.textController,
                         decoration: InputDecoration(
                           contentPadding:

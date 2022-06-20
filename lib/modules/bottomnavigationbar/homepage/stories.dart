@@ -783,7 +783,7 @@ class CategoryTile extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    category.title.length >= 100? category.title.substring(0,5): category.title.toUpperCase(),
+                    category.title.length >= 10? category.title.substring(0,5): category.title.toUpperCase(),
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                       color: Colors.white,fontSize: 13
                     ),
@@ -954,7 +954,7 @@ Category mensCategory = Category(title: "Men", selections: [
   "Jeans",
   "Shorts",
 ]);
-Category womensCategory = Category(title: "Womenfdgdfgdfgdfgd", selections: [
+Category womensCategory = Category(title: "Women", selections: [
   "Shirts",
   "Jeans",
 ]);
@@ -1073,8 +1073,8 @@ List<Product> products = [
     name: "Mid-Rise Skinny Jeans",
     imageUrls: [
       //TODO links not working returning null
-      "https://images-na.ssl-images-amazon.com/images/I/71canaWSlAL._AC_UX522_.jpg",
-      "https://images-na.ssl-images-amazon.com/images/I/71zLzCwbXUL._AC_UX522_.jpg",
+      "https://rukminim1.flixcart.com/image/832/832/klb78nk0/jean/2/q/w/32-jean-pln-blk-nifty-original-imagygz4gm7xyg8a.jpeg?q=70",
+      "https://rukminim1.flixcart.com/image/832/832/klb78nk0/jean/k/n/h/36-jean-pln-blk-nifty-original-imagygz4yrbccy5c.jpeg?q=70",
     ],
     cost: 28.99,
     category: womensCategory,
